@@ -7,9 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { SchoolModule } from './school/school.module';
-import { CollageModule } from './collage/collage.module';
+
 import { NewComponentComponent } from './new-component/new-component.component';
-import { StudentComponent } from './new-folder/student/student.component';
+
 import { desh } from './dashboard/dashboard/dashboard.component';
 
 @NgModule({
@@ -19,14 +19,15 @@ import { desh } from './dashboard/dashboard/dashboard.component';
      HeaderComponent,
      FooterComponent,
      NewComponentComponent,
-     StudentComponent
+     
+     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DashboardModule,
     SchoolModule,
-    CollageModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

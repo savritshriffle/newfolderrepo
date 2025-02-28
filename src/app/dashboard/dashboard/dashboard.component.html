@@ -4,5 +4,34 @@
 <h2>{{contact}}</h2> -->
 <!-- <button (click)="add()" class="btn">Click</button> -->
 
-    <h2>Hello {{ firstName }}</h2>
-    <input type="text" [(ngModel)]="firstName" placeholder="Enter name"/>
+<h2>Hello {{ firstName }}</h2>
+<input [type]="inputType" [(ngModel)]="firstName" placeholder="Enter name"/>
+
+<h1>count {{counter}}</h1>
+<br>
+<input type="number" [(ngModel)]="counter" placeholder="enter number">
+<button (click)="counteradd()" class="btn">increment</button> 
+<br>
+ <button (click)="counterless()" class="btn">decrement</button> 
+
+
+<!-- <p>{{name}}</p>
+<p>{{age}}</p>
+<p>{{contact}}</p>
+    <input type="text" [(ngModel)]="name" placeholder="name here">
+    <input type="number" [(ngModel)]="age"  placeholder="age here">
+    <input type="number" [(ngModel)]="contact" placeholder="contact here">
+<button (click)="data()">submit</button> -->
+
+<input [(ngModel)]="lname">
+{{lname }}
+
+<!-- <h1>{{item}}</h1>
+<h1>{{fruits}}</h1>
+<h1>{{collection}}</h1> -->
+
+<label for="item-input">Add item</label>
+<input type="text" id="item" #newitem>
+<button type="button" (click)="addevent(newitem.value)">Add value</button>
+
+<h1>hello mouse {{mouse}}</h1>

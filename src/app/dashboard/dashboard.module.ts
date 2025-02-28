@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { desh } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     desh
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+ 
   ],
   exports: [
     desh

@@ -1,6 +1,16 @@
 <app-header></app-header>
 <h1>app component</h1>
 <app-login></app-login>
-<app-dashboard></app-dashboard>
+
 <!-- <app-student></app-student> -->
-<app-students></app-students>
+<app-dashboard (newItemevent)="additem($event)"></app-dashboard>
+<br>
+
+
+<ul>
+    <li ngfor="item names list ">{{item}} </li>
+</ul>
+
+<!-- <h1 ngif="condition">{{item}}</h1> -->
+<!-- <app-dashboard [mouse]="mouseclick"></app-dashboard> -->
+

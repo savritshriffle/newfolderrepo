@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output  } from '@angular/core';
 
 @Component({
   
@@ -7,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+// @Output() collection='';
+
   title = 'my-app';
+  // currentitem="Book"
+  // fruitsitem=["Apple" , "Banana" ,"Mango"]
+  item=["apple" , "book", "cat", "dog"]
+
+  additem(item:string):void{
+    // this.item.push("Elephand")
+    // this.item.push("aaaaa")
+   } 
+
+
+
+//  mouseclick="Hello I m mouse"
+ 
 }
