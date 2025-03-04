@@ -1,16 +1,16 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 <h1>app component</h1>
 <app-login></app-login>
 
-<!-- <app-student></app-student> -->
-<app-dashboard (newItemevent)="additem($event)"></app-dashboard>
+<app-student></app-student>
+<app-dashboard (newItemevent)="additem($event)" [child]="childcomponent" [lastname]="lastnames"  (childevent)="childData($event)" [userfirstname]="userfirstname" [user]="userdata"></app-dashboard>
 <br>
-
-
+<h1>{{childdata}}</h1>
+<h2>{{userdata.userid}}</h2>
 <ul>
-    <li ngfor="item names list ">{{item}} </li>
-</ul>
+    <li *ngFor="let item of  items">{{item}} </li>
+</ul> -->
 
-<!-- <h1 ngif="condition">{{item}}</h1> -->
-<!-- <app-dashboard [mouse]="mouseclick"></app-dashboard> -->
+<!-- <h1 ngif="condition ? true : false ">{{item}}</h1> -->
+<app-parent></app-parent>
 

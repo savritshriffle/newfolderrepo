@@ -13,15 +13,33 @@ export class AppComponent {
   title = 'my-app';
   // currentitem="Book"
   // fruitsitem=["Apple" , "Banana" ,"Mango"]
-  item=["apple" , "book", "cat", "dog"]
+  items=["apple" , "book", "cat", "dog"]
 
   additem(item:string):void{
     // this.item.push("Elephand")
     // this.item.push("aaaaa")
    } 
+ 
+   childcomponent="student"
+  lastnames="studentlastname"
+
+  childdata:string=''
+
+  childData(child:string){
+    this.childdata=child
+  }
+ userfirstname="savritambulkar"
+
+ userdata={userid:101,username:"student", userpost:"HR"}
+
+
+  person={
+  firstName:"savri",
+  lastName:"tam"
+ }
 
 
 
-//  mouseclick="Hello I m mouse"
+ 
  
 }

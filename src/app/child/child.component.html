@@ -1,0 +1,13 @@
+<p>child works!</p>
+<!-- <h1>{{Employee[0].firstName}}</h1>
+<h1>{{Employee.lastName}}</h1>
+<h1>{{Employee.age}}</h1>
+<h1>{{Employee.contact}}</h1> -->
+ <ul>
+    <li *ngFor="let data of Employee">
+          <div *ngFor="let newd of (data | keyvalue)">
+            <span>{{newd.key}}</span>
+            <span>{{newd.value}}</span>
+          </div>
+    </li>
+</ul> 

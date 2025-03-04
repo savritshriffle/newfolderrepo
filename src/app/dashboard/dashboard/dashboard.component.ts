@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Subject } from 'rxjs';
 
 
 
@@ -29,7 +28,7 @@ export class desh {
 // @Input() item='';
 // @Input() fruits=['']
 
-collection="Data01"
+  collection="Data01"
 
   counteradd():void{
    this.counter+=1
@@ -64,10 +63,33 @@ collection="Data01"
  
    @Output() newschool= new EventEmitter()
    
+   @Input() child!:string ;
   mouse!: String;
+
+
+@Input() lastname:string='';
+
+@Output() childevent:EventEmitter<string>= new EventEmitter()
+
+childdata(){
+  this.childevent.emit("Hello parent component")
+}
+
+
+@Input() user={
+  userid:0,
+  username:'',
+  userpost:''
+}
+
+
+
+@Input() userfirstname:string='';
+  ngOnInit(){
+    console.log('user',this.user);
+    
+  }
+
   
-
-
-
 }
    

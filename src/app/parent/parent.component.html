@@ -1,0 +1,17 @@
+<p>parent works!</p>
+<!-- <p>{{employeeData.firstName}}</p> -->
+ <app-child [Employee]="employeeData"></app-child> 
+
+<div *ngFor="let emdata of employeeData">
+    <div *ngFor="let ed of emdata | keyvalue">
+
+      <input type="text" [(ngModel)]="ed.value">
+      <input type="text" [(ngModel)]="ed.value">
+      <input type="number" [(ngModel)]="ed.value">
+      <input type="number" [(ngModel)]="ed.value"> 
+</div>  
+</div>
+
+
+
+

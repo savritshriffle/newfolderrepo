@@ -7,11 +7,11 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { SchoolModule } from './school/school.module';
-
 import { NewComponentComponent } from './new-component/new-component.component';
-
 import { desh } from './dashboard/dashboard/dashboard.component';
-
+import { ChildComponent } from './child/child.component';
+import { ParentComponent } from './parent/parent.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
      AppComponent,
@@ -19,7 +19,8 @@ import { desh } from './dashboard/dashboard/dashboard.component';
      HeaderComponent,
      FooterComponent,
      NewComponentComponent,
-     
+     ChildComponent,
+     ParentComponent
      
   ],
   imports: [
@@ -27,6 +28,7 @@ import { desh } from './dashboard/dashboard/dashboard.component';
     AppRoutingModule,
     DashboardModule,
     SchoolModule,
+    FormsModule
   
   ],
   providers: [],
