@@ -12,5 +12,11 @@
 </ul> -->
 
 <!-- <h1 ngif="condition ? true : false ">{{item}}</h1> -->
-<app-parent></app-parent>
+<!-- <app-parent [ngStyle]="{'textAlign':'center','color':'red'}"></app-parent> -->
+<span appCDirective   > Hello custom component</span>
+ 
+<app-parent [ngClass]="'first'"></app-parent>
 
+<div><span appCDirective  *ngFor="let ar of arr" [ngClass]="ar%2==0 ? 'first' : 'sec'">Hello   {{ar}}</span>
+
+</div>

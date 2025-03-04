@@ -12,6 +12,7 @@ import { desh } from './dashboard/dashboard/dashboard.component';
 import { ChildComponent } from './child/child.component';
 import { ParentComponent } from './parent/parent.component';
 import { FormsModule } from '@angular/forms';
+import { CDirectiveDirective } from './c-directive.directive';
 @NgModule({
   declarations: [
      AppComponent,
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
      FooterComponent,
      NewComponentComponent,
      ChildComponent,
-     ParentComponent
+     ParentComponent,
+     CDirectiveDirective
      
   ],
   imports: [

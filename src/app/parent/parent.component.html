@@ -2,15 +2,12 @@
 <!-- <p>{{employeeData.firstName}}</p> -->
  <app-child [Employee]="employeeData"></app-child> 
 
-<div *ngFor="let emdata of employeeData">
-    <div *ngFor="let ed of emdata | keyvalue">
+<!-- <div *ngFor="let emdata of employeeData"></div> -->
 
-      <input type="text" [(ngModel)]="ed.value">
-      <input type="text" [(ngModel)]="ed.value">
-      <input type="number" [(ngModel)]="ed.value">
-      <input type="number" [(ngModel)]="ed.value"> 
-</div>  
-</div>
+<input type="text" [(ngModel)]="employeeData[0].firstName">
+<input type="text" [(ngModel)]="employeeData[0].lastName">
+<input type="number" [(ngModel)]="employeeData[0].age">
+<input type="number" [(ngModel)]="employeeData[0].contact"> 
 
 
 
