@@ -13,10 +13,21 @@
 
 <!-- <h1 ngif="condition ? true : false ">{{item}}</h1> -->
 <!-- <app-parent [ngStyle]="{'textAlign':'center','color':'red'}"></app-parent> -->
-<span appCDirective   > Hello custom component</span>
+<span appCDirective> Hello custom component</span>
  
 <app-parent [ngClass]="'first'"></app-parent>
 
 <div><span appCDirective  *ngFor="let ar of arr" [ngClass]="ar%2==0 ? 'first' : 'sec'">Hello   {{ar}}</span>
 
 </div>
+<!-- <div>{{massge}}</div> -->
+
+
+<input #inputElement type="text" placeholder="viewinput"><br>
+<button (click)="inputvalue()">click Input</button><br>
+<h1>{{data}}</h1>
+
+<h1 #text >Hello Viewchild</h1>
+<button (click)="changecolor()">Color</button><br>
+<h1>{{counter}}</h1><br>
+<button (click)="ngData()">NgClick</button>

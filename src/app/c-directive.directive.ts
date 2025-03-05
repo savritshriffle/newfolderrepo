@@ -21,19 +21,11 @@ export class CDirectiveDirective {
  else {
   this.el.nativeElement.style.backgroundColor ="green"
 
- }
  
 
 }
 
-@HostListener('mouseleave') onMouseleave(){
-  this.el.nativeElement.style.color ="black"
-
-   
 }
-
-
-
 
 }
 
