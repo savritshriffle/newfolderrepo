@@ -63,18 +63,18 @@ changecolor(){
     this.textel.nativeElement.style.color="red"
 }
 
-counter:number=1;
-ngOnInit(){
-    setInterval(()=>{
-      this.counter++ 
-    },2000)
-}
+ //counter:number=1;
+// ngOnInit(){
+//     setInterval(()=>{
+//       this.counter++ 
+//     },2000)
+// }
 
-ngData(){
-    setInterval(()=>{
-      this.counter++ 
-    },2000)
-}
+// ngData(){
+//     setInterval(()=>{
+//       this.counter++ 
+//     },2000)
+// }
 
 ngDoCheck(){
     // console.log(this.counter)

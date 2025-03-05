@@ -1,6 +1,6 @@
 <p>parent works!</p>
 <!-- <p>{{employeeData.firstName}}</p> -->
- <app-child [Employee]="employeeData"></app-child> 
+ <app-child [Employee]="employeeData" [ChildChange]="ChangeString"></app-child> 
 
 <!-- <div *ngFor="let emdata of employeeData"></div> -->
 
@@ -19,3 +19,10 @@
 <button (click)="inputData()">click Inputchange</button>
 <br><br>
 <br>
+<button (click)="Clickparent()">Change by Parent</button>
+<br><br>
+<br>
+<button (click)="ngAfterContentInit()">OnAfterContentInit</button>
+<br><br>
+<br>
+<div>{{userel}}</div>

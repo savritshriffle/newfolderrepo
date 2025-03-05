@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges} from '@angular/core';
 import { first } from 'rxjs';
 
 @Component({
@@ -6,7 +6,7 @@ import { first } from 'rxjs';
 	templateUrl: './child.component.html',
 	styleUrls: ['./child.component.css']
 })
-export class ChildComponent {
+export class ChildComponent implements OnChanges{
 
 	@Input() Employee=[{
 		firstName:"",
@@ -17,6 +17,7 @@ export class ChildComponent {
 	massage: string = "child viewchild component";
 
 	constructor() { }
+	
 
 	ngOnInit(){
 		console.log('Employee',this.Employee);
@@ -39,4 +40,21 @@ export class ChildComponent {
 	inputData(input:string){
        this.childInput=input;
 	}
+
+	@Input() ChildChange:string=""
+    //   counter:number=0;  
+
+	ngOnChanges(changes : any): void {
+		
+		 this.ChildChange
+		console.log("ngOnChanges",changes)
+	}
+	
+    user:string='I am user'
+	userdata(users:string){
+		this.user=users
+	}
+	
+
+
 }
