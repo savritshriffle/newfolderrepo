@@ -1,7 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-
-
-
+import { Component, EventEmitter, Input, Output } from '@angular/core'
 
 @Component({
   selector: "app-dashboard",
@@ -29,6 +26,7 @@ export class desh {
 // @Input() fruits=['']
 
   collection="Data01"
+  mouse!: String;
 
   counteradd():void{
    this.counter+=1
@@ -50,40 +48,28 @@ export class desh {
     this.name='',
     this.age=0
     this.contact=0
-
-    
    }
-  //  @Output() look='';
-    
-   @Output() newItemevent= new EventEmitter<string>()
 
-   addevent(value:string){
+  //  @Output() look='';
+@Output() newItemevent= new EventEmitter<string>()
+  addevent(value:string){
      this.newItemevent.emit("Click the btn");
    }
  
-   @Output() newschool= new EventEmitter()
-   
-   @Input() child!:string ;
-  mouse!: String;
-
-
+@Output() newschool= new EventEmitter()
+@Input() child!:string ;
 @Input() lastname:string='';
-
 @Output() childevent:EventEmitter<string>= new EventEmitter()
 
 childdata(){
   this.childevent.emit("Hello parent component")
 }
 
-
 @Input() user={
   userid:0,
   username:'',
   userpost:''
 }
-
-
-
 @Input() userfirstname:string='';
   ngOnInit(){
     console.log('user',this.user);

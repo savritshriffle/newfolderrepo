@@ -13,6 +13,7 @@ import { ChildComponent } from './child/child.component';
 import { ParentComponent } from './parent/parent.component';
 import { FormsModule } from '@angular/forms';
 import { CDirectiveDirective } from './c-directive.directive';
+import { MyServiceService } from './my-service.service';
 @NgModule({
   declarations: [
      AppComponent,
@@ -33,7 +34,7 @@ import { CDirectiveDirective } from './c-directive.directive';
     FormsModule
   
   ],
-  providers: [],
+  providers: [MyServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

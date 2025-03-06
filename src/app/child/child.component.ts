@@ -1,12 +1,13 @@
-import { Component, Input, OnChanges} from '@angular/core';
+import { Component, Inject, Input, OnChanges, OnDestroy} from '@angular/core';
 import { first } from 'rxjs';
+import { MyServiceService } from '../my-service.service';
 
 @Component({
 	selector: 'app-child',
 	templateUrl: './child.component.html',
 	styleUrls: ['./child.component.css']
 })
-export class ChildComponent implements OnChanges{
+export class ChildComponent implements OnChanges, OnDestroy{
 
 	@Input() Employee=[{
 		firstName:"",
@@ -15,11 +16,15 @@ export class ChildComponent implements OnChanges{
 		age:0
 	}]
 	massage: string = "child viewchild component";
-
+	arr = [1,2,3,4,5,6,7];
+	childInput:string="Input in child component";
 	constructor() { }
 	
-
+    a=true;
 	ngOnInit(){
+		setTimeout(()=>{
+			this.a = false
+		},2000)
 		console.log('Employee',this.Employee);
 	}
 
@@ -29,14 +34,10 @@ export class ChildComponent implements OnChanges{
 
 	}
 
-	arr = [1,2,3,4,5,6,7];
-
 	arrChildData(newarr:[]){
 		this.arr = newarr;
 	}
 
-
-	childInput:string="Input in child component";
 	inputData(input:string){
        this.childInput=input;
 	}
@@ -55,6 +56,12 @@ export class ChildComponent implements OnChanges{
 		this.user=users
 	}
 	
+    @Input() image = 'ChildImage';
 
+	ngOnDestroy(): void {
+		console.log("ngOnDestroy")
+	}
+	
+	
 
 }

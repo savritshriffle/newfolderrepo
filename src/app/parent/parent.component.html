@@ -1,28 +1,38 @@
 <p>parent works!</p>
 <!-- <p>{{employeeData.firstName}}</p> -->
- <app-child [Employee]="employeeData" [ChildChange]="ChangeString"></app-child> 
-
+ <app-child *ngIf="ImageData" [Employee]="employeeData" [ChildChange]="ChangeString" [image]="imageInput"></app-child> 
 <!-- <div *ngFor="let emdata of employeeData"></div> -->
-
-<input type="text" [(ngModel)]="employeeData[0].firstName">
+<!-- <input type="text" [(ngModel)]="employeeData[0].firstName">
 <input type="text" [(ngModel)]="employeeData[0].lastName">
 <input type="number" [(ngModel)]="employeeData[0].age">
 <input type="number" [(ngModel)]="employeeData[0].contact"> 
-
-
-
 <button (click)="childdata()" style="margin: 20px;">child data</button>
-
 <button (click)="arrdata()">click arr</button>
-<br><br>
+<br>
 <br>
 <button (click)="inputData()">click Inputchange</button>
-<br><br>
+<br>
 <br>
 <button (click)="Clickparent()">Change by Parent</button>
-<br><br>
+<br>
 <br>
 <button (click)="ngAfterContentInit()">OnAfterContentInit</button>
 <br><br>
 <br>
 <div>{{userel}}</div>
+<br> -->
+<!-- <div>Image : {{imageInput}}</div>
+<input [(ngModel)]="imageInput" type="text" placeholder="imageName">
+<br>
+<button (click)="imageAdd()">addImage</button>
+<br>
+<br> -->
+<button (click)="imageDistroy()" style="color: red;">DistroyChild</button>
+<br>
+<br>
+<br>
+<div #divEl>Hello ParentDiv Element</div>
+<br>
+<button (click)="changeEl()">ParentDiv</button>
+<br>
+<br>

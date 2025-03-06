@@ -10,4 +10,7 @@ export class MyServiceService {
  getdata(){
    return "hello service"
  }
+ getHome(){
+  return "Hello Home service"
+ }
 }
