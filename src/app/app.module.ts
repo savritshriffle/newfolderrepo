@@ -8,12 +8,12 @@ import { FooterComponent } from './footer/footer.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { SchoolModule } from './school/school.module';
 import { NewComponentComponent } from './new-component/new-component.component';
-import { desh } from './dashboard/dashboard/dashboard.component';
 import { ChildComponent } from './child/child.component';
 import { ParentComponent } from './parent/parent.component';
 import { FormsModule } from '@angular/forms';
 import { CDirectiveDirective } from './c-directive.directive';
 import { MyServiceService } from './my-service.service';
+import { HomeModule } from './home/home.module';
 @NgModule({
   declarations: [
      AppComponent,
@@ -31,8 +31,8 @@ import { MyServiceService } from './my-service.service';
     AppRoutingModule,
     DashboardModule,
     SchoolModule,
-    FormsModule
-  
+    FormsModule,
+    HomeModule
   ],
   providers: [MyServiceService],
   bootstrap: [AppComponent]

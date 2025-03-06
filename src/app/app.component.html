@@ -1,4 +1,14 @@
-<!-- <app-header></app-header>
+
+<div>
+    <nav>
+        <ul class="ul">
+            <li><a routerLink="/desh">Dashboard</a></li>
+            <li><a routerLink="/desh/parent">Parent</a></li>
+            <li><a routerLink="/desh/services">Services</a></li>
+        </ul>
+    </nav>
+</div>
+<router-outlet></router-outlet><!-- <app-header></app-header>
 <h1>app component</h1>
 <app-login></app-login>
 
@@ -11,16 +21,16 @@
     <li *ngFor="let item of  items">{{item}} </li>
 </ul> -->
 
-<!-- <h1 ngif="condition ? true : false ">{{item}}</h1> -->
-<!-- <app-parent [ngStyle]="{'textAlign':'center','color':'red'}"></app-parent> -->
-<span appCDirective> Hello custom component</span>
+<!-- <h1 ngif="condition ? true : false ">{{item}}</h1>  -->
+ <!-- <app-parent [ngStyle]="{'textAlign':'center','color':'red'}"></app-parent> --> -->
+ <span appCDirective> Hello custom component</span>
  
 <app-parent [ngClass]="'first'"></app-parent>
 
 <div><span appCDirective  *ngFor="let ar of arr" [ngClass]="ar%2==0 ? 'first' : 'sec'">Hello   {{ar}}</span>
 
 </div>
-<!-- <div>{{massge}}</div> -->
+ <!-- <div>{{massge}}</div> -->
 
 
 <input #inputElement type="text" placeholder="viewinput"><br>
@@ -32,3 +42,8 @@
 <!-- <h1>{{counter}}</h1><br> -->
 <!-- <button (click)="ngData()">NgClick</button> -->
 <!-- <button (click)="getService()">getService</button><br> -->
+ <!-- <Router-Outlet></Router-Outlet> -->
+  <!-- <router-Outlet></router-Outlet> -->
+
+
+ 

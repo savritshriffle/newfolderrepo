@@ -13,7 +13,8 @@ import { FormsModule } from '@angular/forms';
  
   ],
   exports: [
-    desh
+    desh,
+    
   ]
 })
 export class DashboardModule { 
