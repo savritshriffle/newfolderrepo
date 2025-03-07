@@ -6,14 +6,22 @@ import { Injectable } from '@angular/core';
 export class MyServiceService {
 
   constructor() { }
+  dashBoard: boolean = false ;
+  Login(){
+     this.dashBoard = true;
+     alert("User is Valid")
+  }
+  
+  // isAuth(){
+  //   return this.dashBoard;
+  // }
+//  getdata(){
+//    return "hello service"
+//  }
+//  getHome(){
+//   return "Hello Home service"
+//  }
 
- getdata(){
-   return "hello service"
- }
- getHome(){
-  return "Hello Home service"
- }
-
-
+    
 
 }

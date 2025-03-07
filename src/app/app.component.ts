@@ -23,12 +23,14 @@ export class AppComponent implements AfterContentChecked , AfterContentInit, Aft
     arr=[1,2,3,4,5]
     massage:string = "";
     data:string = ''
-
-    constructor(private service: MyServiceService){
-        console.log(service)
-        console.log(service.getdata());
-        console.log(service.getHome());
+    
+    constructor(public service: MyServiceService){
+        // console.log(service)
+        // console.log(service.getdata());
+        // console.log(service.getHome());
+        console.log(service.Login())
     }
+    
    
     // private service = Inject(MyServiceService)
     // getService(){
@@ -96,7 +98,13 @@ export class AppComponent implements AfterContentChecked , AfterContentInit, Aft
         console.log("ngAfterViewChecked")
     }
     
-
-
+    DashBoard(){
+        if(this.service.dashBoard){
+            confirm("Access Dashboard")
+        }
+        else{
+            this.DashBoard 
+        }
+    }
     
 }
