@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, Output, ViewChild ,AfterContentInit ,AfterContentChecked, AfterViewInit, AfterViewChecked, Inject} from '@angular/core';
 import { MyServiceService } from './my-service.service';
-
+import { Router } from '@angular/router';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -24,11 +24,8 @@ export class AppComponent implements AfterContentChecked , AfterContentInit, Aft
     massage:string = "";
     data:string = ''
     
-    constructor(public service: MyServiceService){
-        // console.log(service)
-        // console.log(service.getdata());
-        // console.log(service.getHome());
-        console.log(service.Login())
+    constructor(private service: MyServiceService , private route : Router){
+        
     }
     
    
@@ -96,15 +93,14 @@ export class AppComponent implements AfterContentChecked , AfterContentInit, Aft
 
     ngAfterViewChecked(): void {
         console.log("ngAfterViewChecked")
-    }
+    }  
     
-    DashBoard(){
-        if(this.service.dashBoard){
-            confirm("Access Dashboard")
-        }
-        else{
-            this.DashBoard 
-        }
+    dashBoard(){
+     if(true){
+     return this.route.navigate(['/desh'])
+     }
+     else{
+      return  false
+     }
     }
-    
 }

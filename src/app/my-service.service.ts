@@ -6,11 +6,7 @@ import { Injectable } from '@angular/core';
 export class MyServiceService {
 
   constructor() { }
-  dashBoard: boolean = false ;
-  Login(){
-     this.dashBoard = true;
-     alert("User is Valid")
-  }
+  Login: boolean = true;
   
   // isAuth(){
   //   return this.dashBoard;
@@ -22,6 +18,6 @@ export class MyServiceService {
 //   return "Hello Home service"
 //  }
 
-    
+
 
 }
