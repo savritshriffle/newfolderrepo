@@ -1,6 +1,7 @@
 import { Component, ElementRef, Input, Output, ViewChild ,AfterContentInit ,AfterContentChecked, AfterViewInit, AfterViewChecked, Inject} from '@angular/core';
 import { MyServiceService } from './my-service.service';
 import { Router } from '@angular/router';
+import { of } from 'rxjs';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -23,9 +24,10 @@ export class AppComponent implements AfterContentChecked , AfterContentInit, Aft
     arr=[1,2,3,4,5]
     massage:string = "";
     data:string = ''
+    number$ = of(1,2,3,4);
     
     constructor(private service: MyServiceService , private route : Router){
-        
+        console.log(this.number$.subscribe())
     }
     
    
@@ -95,12 +97,13 @@ export class AppComponent implements AfterContentChecked , AfterContentInit, Aft
         console.log("ngAfterViewChecked")
     }  
     
-    dashBoard(){
-     if(true){
-     return this.route.navigate(['/desh'])
-     }
-     else{
-      return  false
-     }
-    }
+    // dashBoard(){
+    //  if(true){
+    //  return this.route.navigate(['/desh'])
+    //  }
+    //  else{
+    //   return  false
+    //  }
+    // }
+    
 }

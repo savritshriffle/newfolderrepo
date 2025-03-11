@@ -2,9 +2,8 @@
 <div>
     <nav>
         <ul class="ul">
-            <li><a routerLink = '/desh'>Dashboard</a></li>
-            <li><a routerLink="/parent">Parent</a></li>
-            
+            <li><a [routerLink] = "['/desh']" [queryParams]="{part:'dashboard',year:2020}" [fragment]="'Hellodashboard'">Dashboard</a></li>
+            <li><a routerLink="/parent" [queryParams]="{parent:'routehere'}" [fragment]="'Helloparent'">Parent</a></li>
             <!-- <li><a routerLink="/home">Home</a></li> -->
         </ul>
     </nav>

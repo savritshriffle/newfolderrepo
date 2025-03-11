@@ -22,8 +22,13 @@ const routes: Routes = [
   {
     path:'parent', 
     component:ParentComponent, 
-    canActivate: [AuthGuard], 
-    canDeactivate: [AuthGuard],
+    // canActivate: [AuthGuard], 
+    // canDeactivate: [AuthGuard],
+    data:{
+      title:"title is parent component",
+      massage:"parent component static route",
+    }
+    
     
   },
   

@@ -1,14 +1,15 @@
-import { Component, ContentChild, ViewChild, AfterContentInit, ElementRef} from '@angular/core';
+import { Component, ContentChild, ViewChild, AfterContentInit, ElementRef, OnInit} from '@angular/core';
 import { ChildComponent } from '../child/child.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-parent',
     templateUrl: './parent.component.html',
     styleUrls: ['./parent.component.css']
 })
-export class ParentComponent  implements  AfterContentInit{
+export class ParentComponent  implements  AfterContentInit, OnInit{
 
-    constructor() { }
+    constructor(private route : ActivatedRoute) { }
 
     test = ''
     employeeData = [{firstName:" =   savri",lastName:" =  tambulkar" ,age:100, contact:123456}]
@@ -16,6 +17,8 @@ export class ParentComponent  implements  AfterContentInit{
     imageInput: string = ''
     ImageData: boolean = true;
     Data: string = '';
+    title: string = '';
+    massage: string = '';
     @ViewChild(ChildComponent) childel!: ChildComponent
     childdata(){
         this.childel.datachild("data change by parent component")
@@ -53,6 +56,16 @@ export class ParentComponent  implements  AfterContentInit{
     changeEl(){
        this.Data = this.element.nativeElement.style.color="green"
        console.log(this.Data)
+    }
+    ngOnInit(): void {
+        this.title = this.route.snapshot.data['massage'] 
+        this.massage = this.route.snapshot.data['title']
+        console.log(this.route.snapshot)
+        this.title = this.route.snapshot.queryParams['title']
+        this.massage = this.route.snapshot.queryParams['massage']
+        console.log(this.route.snapshot.queryParams)
+        console.log(this.route.snapshot.fragment)
+        
     }
 
 }
