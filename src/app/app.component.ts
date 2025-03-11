@@ -1,7 +1,7 @@
 import { Component, ElementRef, Input, Output, ViewChild ,AfterContentInit ,AfterContentChecked, AfterViewInit, AfterViewChecked, Inject} from '@angular/core';
 import { MyServiceService } from './my-service.service';
 import { Router } from '@angular/router';
-import { of } from 'rxjs';
+import { Observable, Observer, of } from 'rxjs';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -24,10 +24,31 @@ export class AppComponent implements AfterContentChecked , AfterContentInit, Aft
     arr=[1,2,3,4,5]
     massage:string = "";
     data:string = ''
-    number$ = of(1,2,3,4);
+    number$ = of(1,2,3);
     
     constructor(private service: MyServiceService , private route : Router){
-        console.log(this.number$.subscribe())
+        // this.number$.subscribe(value => console.log("Observable variable  =  "+ value))
+        // this.number$.subscribe({
+        //     next(value){ console.log("Observable next values = "+value+1)},
+        //     error(err){ console.log("Internal Error "+err)},
+        //     complete(){ console.log("observable task is completed")}
+        
+        // })
+        // this.number$.subscribe({
+        //     next(value){
+        //         setTimeout(()=>{
+        //             console.log(value)
+        //         },2000)
+        //     }
+        // })
+    }
+    observarFun(Observ : Observer<number>){
+        console.log(Observ)
+        this.number$.subscribe({
+            next(value){
+                console.log(value)
+            }
+        })
     }
     
    
@@ -105,5 +126,16 @@ export class AppComponent implements AfterContentChecked , AfterContentInit, Aft
     //   return  false
     //  }
     // }
+
+    observable = new Observable((subscribe)=>{
+        subscribe.next(1)
+        subscribe.next(2)
+        subscribe.next(3)
+        subscribe.next(4)
+        setTimeout(()=>{
+            subscribe.next(5)
+            subscribe.complete()
+        },5000)
+    })
     
 }

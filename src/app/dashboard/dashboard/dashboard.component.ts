@@ -7,6 +7,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core'
 })
 
 export class desh {
+  canDeactive(): import("rxjs").Observable<boolean | Promise<boolean>> {
+    throw new Error('Method not implemented.');
+  }
 
 
 
