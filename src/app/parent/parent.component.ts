@@ -1,10 +1,10 @@
 import { Component, ContentChild, ViewChild, AfterContentInit, ElementRef, OnInit } from '@angular/core';
 import { ChildComponent } from '../child/child.component';
 import { ActivatedRoute } from '@angular/router';
-import { of, forkJoin, from, Observable, throwError, map, filter, mergeMap, find, pipe, first, last } from 'rxjs';
-import { NumberValueAccessor } from '@angular/forms';
+import { of, forkJoin, from, throwError,  mergeMap,  first, last, Subject, map, filter } from 'rxjs';
 import { __values } from 'tslib';
-
+import { BehaviorSubject } from 'rxjs';
+import { JsonPipe } from '@angular/common';
 
 @Component({
     selector: 'app-parent',
@@ -39,13 +39,20 @@ export class ParentComponent  implements  AfterContentInit, OnInit {
         name : "firstName",
         age : 10
     }
-    var2 = [9,'6',7,0]
+    var2 = [9, '6', 7, 0]
     var3 = [11, 12, 13]
     forkJoinExample = forkJoin(this.var1.name , this.var2, )
     throwerr = throwError(["Internal error"])
-    margeMapExample = of([1,2,3,4,5])
+    margeMapExample = of([1, 2, 3, 4, 5])
     margeMapExample2 = of('a', 'b', 'c', 'd')
     margeMapExample3 = of('1', '2', '3', '4')
+    counter = new BehaviorSubject(0)
+    number = new Subject<number>()
+    initialString = new BehaviorSubject([4, 5, 3, 7, 6, 2, 1,{
+        name : "studentName",
+        age : 99
+    }])
+    behaviorSub = new BehaviorSubject<any>(of([1,2,3,4,5]))
     @ViewChild(ChildComponent) childel!: ChildComponent
     childdata(){
         this.childel.datachild("data change by parent component")
@@ -121,8 +128,7 @@ export class ParentComponent  implements  AfterContentInit, OnInit {
     //     this.forkJoinExample.subscribe((value)=>{
     //         console.log(value)
     //     })
-            this.throwerr.subscribe()
-
+        this.throwerr.subscribe()
         this.margeMapExample.pipe(
             mergeMap(val => {
                 console.log(val)
@@ -167,7 +173,26 @@ export class ParentComponent  implements  AfterContentInit, OnInit {
     //     })
 
    // }
-  
+    // this.number.subscribe((value)=>{
+    //     setInterval(() => {
+    //         console.log(value)
+    //     }, 2000);
+    // })
+
+    this.initialString.pipe(
+        map(m => console.log(m.sort()))
+    ).subscribe(()=>{})
+
+    console.log(this.behaviorSub.value.subscribe())
+
+    this.oprator.pipe()
 
 }
+    // Increment(){
+    //     setInterval(()=>{
+    //         console.log(this.counter.value+1)
+    //     },2000)
+    // }
 }
+
+
