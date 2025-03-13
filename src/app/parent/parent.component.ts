@@ -1,10 +1,9 @@
 import { Component, ContentChild, ViewChild, AfterContentInit, ElementRef, OnInit } from '@angular/core';
 import { ChildComponent } from '../child/child.component';
 import { ActivatedRoute } from '@angular/router';
-import { of, forkJoin, from, throwError,  mergeMap,  first, last, Subject, map, filter } from 'rxjs';
-import { __values } from 'tslib';
+import { of, forkJoin, from, throwError,  mergeMap,  first, last, Subject, map, toArray, reduce } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
-import { JsonPipe } from '@angular/common';
+
 
 @Component({
     selector: 'app-parent',
@@ -23,12 +22,13 @@ export class ParentComponent  implements  AfterContentInit, OnInit {
     Data: string = '';
     title: string = '';
     massage: string = '';
-    oprator = of([1,2,3,4],"Hello", "User", {
+    operator = of([1,2,3,4],"Hello", "User", {
         name : 'firstName',
         age: 10,
     }
     )
-    fromOprator = from([1,2,3,4,5,6,7,8,"hello" ,{
+    operator2 = of('1','v','m','4','8','5')
+    fromOperator = from([1,2,3,4,5,6,7,8,"hello" ,{
         name: "firstName",
         age: 10
     }])
@@ -105,12 +105,12 @@ export class ParentComponent  implements  AfterContentInit, OnInit {
            
         // })
         
-        this.oprator.subscribe((value:any)=>{
+        this.operator.subscribe((value:any)=>{
             console.log(value.age)
             console.log(value.name)
             console.log()
         })
-        this.oprator.pipe(
+        this.operator.pipe(
             // first()
             last()
         ).subscribe((value)=>{
@@ -119,7 +119,7 @@ export class ParentComponent  implements  AfterContentInit, OnInit {
 
         
 
-        this.fromOprator.pipe(first()).subscribe((value)=>{
+        this.fromOperator.pipe(first()).subscribe((value)=>{
             console.log(value)
         })
     //     this.fromExample.subscribe((value)=>{
@@ -185,8 +185,43 @@ export class ParentComponent  implements  AfterContentInit, OnInit {
 
     console.log(this.behaviorSub.value.subscribe())
 
-    this.oprator.pipe()
+    this.operator.pipe(
+        toArray(),
+        map(m => Object.assign(m))
+    ).subscribe((result)=>{
+        console.log(result)
+    })
+    this.operator.pipe(
+        toArray(),
+        map(m => Object.create(m))
+    ).subscribe((result)=>{
+        console.log(result)
+    })
 
+    this.operator.pipe(
+        reduce((acc, current)=>{
+            if(Array(current)){
+                acc = current;
+            }
+            else if(typeof current == "string"){
+                acc = current;
+            }
+            else if(typeof current == "object"){
+                acc = current;
+            }
+            return acc;
+        },{})
+    ).subscribe((value)=>{
+        console.log(value)
+    })
+
+    this.operator2.pipe(
+        toArray(),
+        map(m => m)
+    ).subscribe((value)=>{
+        console.log(value)
+    })
+        
 }
     // Increment(){
     //     setInterval(()=>{
